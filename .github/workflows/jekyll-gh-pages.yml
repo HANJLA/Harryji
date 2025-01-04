@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarkan Jewelry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Top Banner -->
+    <div class="bg-red-700 text-white text-center py-2 text-sm">
+        Get 5% OFF on All Prepaid Orders, Use Code: PAY5
+    </div>
+
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-3 border-b">
+        <div class="flex items-center space-x-4">
+            <button class="md:hidden text-xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <img src="https://storage.googleapis.com/a1aa/image/vrJoeVyGLs0aMqoDnDYZUBhUqX3OgxOxDJua7AmNnyKeg0BUA.jpg" alt="Zarkan Logo" class="h-10">
+        </div>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-red-600">Home</a>
+            <a href="#" class="hover:text-red-600">Shop</a>
+            <a href="#" class="hover:text-red-600">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-search text-xl cursor-pointer"></i>
+            <i class="fas fa-heart text-xl cursor-pointer"></i>
+            <i class="fas fa-shopping-bag text-xl cursor-pointer"></i>
+            <i class="fas fa-user text-xl cursor-pointer"></i>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden flex flex-col bg-gray-100 px-4 py-3">
+        <a href="#" class="py-2">Home</a>
+        <a href="#" class="py-2">Shop</a>
+        <a href="#" class="py-2">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="px-4 py-6">
+        <h1 class="text-3xl font-semibold text-center mb-6">Perfect Gift for Your Partner</h1>
+
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center space-x-2">
+                <span class="text-gray-600">Sort by:</span>
+                <select class="border border-gray-300 rounded px-2 py-1">
+                    <option>Best Selling</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                </select>
+            </div>
+            <div class="flex space-x-4">
+                <button><i class="fas fa-th-large text-xl"></i></button>
+                <button><i class="fas fa-th-list text-xl"></i></button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product Card -->
+            <div class="border p-4 rounded-lg">
+                <div class="relative">
+                    <img src="https://storage.googleapis.com/a1aa/image/aBxnqvWU1xLqANZ7IUxM8oGMEHop2LQhhqJi3XcLaAxpIdAF.jpg" alt="Suit Salwar 1" class="w-full h-48 object-cover">
+                    <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-56%</span>
+                </div>
+                <h2 class="text-lg font-semibold mt-4">Suit Salwar 1</h2>
+                <div class="flex items-center mt-2">
+                    <div class="flex text-yellow-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-gray-600 ml-2">46 reviews</span>
+                </div>
+                <div class="text-gray-500 line-through mt-2">Rs. 1,999.00</div>
+                <div class="text-xl font-bold text-gray-800">Rs. 899.00</div>
+
+                <!-- Buy Button -->
+                <form action="upi://pay" method="get">
+                    <input type="hidden" name="pa" value="hanjla1@paytm">
+                    <input type="hidden" name="pn" value="Zarkan">
+                    <input type="hidden" name="tn" value="Payment for Suit Salwar 1">
+                    <input type="hidden" name="am" value="899.00">
+                    <input type="hidden" name="cu" value="INR">
+                    <button type="submit" class="w-full bg-red-600 text-white py-2 mt-4 rounded-lg hover:bg-red-700">
+                        <i class="fas fa-shopping-bag"></i> BUY NOW
+                    </button>
+                </form>
+
+                <!-- Product Icons -->
+                <div class="flex justify-between items-center mt-4">
+                    <button><i class="fas fa-heart text-xl"></i></button>
+                    <button><i class="fas fa-eye text-xl"></i></button>
+                </div>
+            </div>
+            <!-- Repeat Product Cards as Needed -->
+        </div>
+    </main>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
